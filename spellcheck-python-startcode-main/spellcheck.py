@@ -67,9 +67,11 @@ while loop:
         dictionary = loadWordsFromFile("data-files/dictionary.txt")
         result = linearSearch(dictionary, userinput)
         if(result == -1):
+            print("Linear Search is Starting..")
             print(userinput, "Is Not Found")
             print(end - start)
         else:
+            print("Linear Search is Starting..")
             print(userinput, "Is Found At: ", result)
             print(end - start)
     
@@ -100,9 +102,11 @@ while loop:
         result = binarySearch(dictionary, item)
 
         if result != -1:
+            print("BINARY Search is Starting..")
             print(userinput, "Is Found At", str(result))
             print(end - start)
-        else:   
+        else:
+            print("BINARY Search is Starting..")
             print(userinput, "Is Not Found")
             print(end - start)
 
@@ -121,9 +125,11 @@ while loop:
         aliceWords = loadWordsFromFile("data-files/AliceInWonderLand.txt")
         result = linearSearch(aliceWords, userinput)
         if(result == -1):
+            print("Linear Search is Starting..")
             print(userinput, "Is Not Found")
             print(end - start)
         else:
+            print("Linear Search is Starting..")
             print(userinput, "Is Found At: ", result)
             print(end - start)
     
@@ -154,9 +160,11 @@ while loop:
         result = binarySearch(aliceWords, item)
 
         if result != -1:
+            print("BINARY Search is Starting..")
             print(userinput, "Is Found At", str(result))
             print(end - start)
-        else:   
+        else:
+            print("BINARY Search is Starting..")
             print(userinput, "Is Not Found")
             print(end - start)
     
@@ -166,3 +174,4 @@ while loop:
         print ("EXIT")
  
         loop = False
+
