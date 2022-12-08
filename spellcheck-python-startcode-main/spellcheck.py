@@ -127,6 +127,7 @@ while loop:
 
         aliceWords = loadWordsFromFile("data-files/AliceInWonderLand.txt")
         result = linearSearch(aliceWords, userinput)
+        number_of_elements = len(aliceWords)
         if(result == -1):
             print("Linear Search is Starting..")
             print(userinput, "Is Not Found")
@@ -134,7 +135,7 @@ while loop:
             print("it took" , end - start, "Seconds")
         else:
             print("Linear Search is Starting..")
-            print(userinput, "Is Found At: ", result)
+            print("Number of the word:", userinput, "in the list: ", number_of_elements)
             end = time.time()
             print("it took" , end - start, "Seconds")
     
@@ -163,10 +164,11 @@ while loop:
         item = userinput
 
         result = binarySearch(aliceWords, item)
+        number_of_elements = len(userinput)
 
         if result != -1:
             print("BINARY Search is Starting..")
-            print(userinput, "Is Found At", str(result))
+            print("Number of the word:", userinput, "in the list: ", number_of_elements)
             end = time.time()
             print("it took" , end - start, "Seconds")
         else:
@@ -181,4 +183,3 @@ while loop:
         print ("EXIT")
  
         loop = False
-
