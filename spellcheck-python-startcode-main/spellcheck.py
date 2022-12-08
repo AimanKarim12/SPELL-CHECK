@@ -35,7 +35,6 @@ main()
 
 #TIME
 import time
-end = time.time()
 
 # PART A   
 # LOOP
@@ -69,11 +68,13 @@ while loop:
         if(result == -1):
             print("Linear Search is Starting..")
             print(userinput, "Is Not Found")
-            print(end - start)
+            end = time.time()
+            print("it took" , end - start, "Seconds")
         else:
             print("Linear Search is Starting..")
             print(userinput, "Is Found At: ", result)
-            print(end - start)
+            end = time.time()
+            print("it took" , end - start, "Seconds")
     
     #BINARY SEARCH
     elif select == "2":
@@ -104,11 +105,13 @@ while loop:
         if result != -1:
             print("BINARY Search is Starting..")
             print(userinput, "Is Found At", str(result))
-            print(end - start)
+            end = time.time()
+            print("it took" , end - start, "Seconds")
         else:
             print("BINARY Search is Starting..")
             print(userinput, "Is Not Found")
-            print(end - start)
+            end = time.time()
+            print("it took" , end - start, "Seconds")
 
     #PART B
     #LINEAR SEARCH  AIW
@@ -127,11 +130,13 @@ while loop:
         if(result == -1):
             print("Linear Search is Starting..")
             print(userinput, "Is Not Found")
-            print(end - start)
+            end = time.time()
+            print("it took" , end - start, "Seconds")
         else:
             print("Linear Search is Starting..")
             print(userinput, "Is Found At: ", result)
-            print(end - start)
+            end = time.time()
+            print("it took" , end - start, "Seconds")
     
     #BINARY SEARCH AIW
     elif select == "4":
@@ -162,11 +167,13 @@ while loop:
         if result != -1:
             print("BINARY Search is Starting..")
             print(userinput, "Is Found At", str(result))
-            print(end - start)
+            end = time.time()
+            print("it took" , end - start, "Seconds")
         else:
             print("BINARY Search is Starting..")
             print(userinput, "Is Not Found")
-            print(end - start)
+            end = time.time()
+            print("it took" , end - start, "Seconds")
     
     
     #EXIT
