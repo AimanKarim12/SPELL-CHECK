@@ -4,19 +4,67 @@
 # 2: aliceWords: a list containing all of the words from "AliceInWonderland.txt"
 
 import re  # Needed for splitting text with a regular expression
-
+import time
 
 def main():
     # Load data files into lists
     dictionary = loadWordsFromFile("data-files/dictionary.txt")
-
     aliceWords = loadWordsFromFile("data-files/AliceInWonderLand.txt")
 
-    # Print first 50 values of each list to verify contents
-    #print(dictionary[0:50])
-    #print(aliceWords[0:50])
+    # MAIN PROGRAM LOOP
+    loop = True
+    while loop: 
+        selection = getMenuSelection()
 
+        if selection == "1":
+            checkWordLinear(dictionary)
+        elif selection =="2":
+            checkWordBinary(dictionary)
+
+        
 # end main()
+
+def getMenuSelection():
+    #PRINT MAIN MENU
+    print("MAIN MENU")
+    print("1. Spell Check a Word (Linear Search)")
+    print("2. Spell Check a Word (Binary Search)")
+    print("3. Spell Check Alice In Wonderland (Linear Search)")
+    print("4. Spell Check Alice In Wonderland (Binary Search)")
+    print("5. Exit")
+
+    #USER INPUT 
+    return input("Enter Selection (1-5): ")
+
+def checkWordLinear(dictionary):
+    print("LINEAR SEARCH A WORD")
+    userinput = input("Enter A Word: ")
+    
+    print("Linear Search is Starting..")
+    start = time.time()
+    result = linearSearch(dictionary, userinput.lower())
+    end = time.time()
+    if(result == -1):
+        print(userinput, "Is Not Found")
+    else:
+        print(userinput, "Is Found At: ", result)
+    print("it took" , end - start, "Seconds")
+
+def checkWordBinary(dictionary):
+    print("BINARY SEARCH A WORD")
+    userinput = input("Enter A Word: ")
+    print("BINARY Search is Starting..")
+    start = time.time()
+    result = binarySearch(dictionary, userinput.lower())
+    end = time.time()
+
+    if result != -1:
+        print(userinput, "Is Found At", str(result))
+
+    else:
+        print(userinput, "Is Not Found")
+        
+    print("it took" , end - start, "Seconds")
 
 
 def loadWordsFromFile(fileName):
@@ -29,25 +77,38 @@ def loadWordsFromFile(fileName):
     return re.split('\s+', textData)
 # end loadWordsFromFile()
 
+def linearSearch(aList, item):
+    for i in range(len(aList)):
+        if (aList[i] == item):
+            return i
+    return -1
+
+def binarySearch(array, item):
+        
+    top = len(array) - 1
+    mid = 0
+    bottom = 0
+        
+    while bottom <= top:
+        mid = (top + bottom) // 2
+        if array[mid] < item:
+            bottom = mid + 1
+        elif array[mid] > item:
+            top = mid - 1
+        else:
+            return mid
+        return -1
+
 
 # Call main() to begin program
 main()
 
-#TIME
-import time
+
 
 # PART A   
 # LOOP
 loop = True
 while loop: 
-
-    #PRINT MAIN MENU
-    print("MAIN MENU")
-    print("1. Spell Check a Word (Linear Search)")
-    print("2. Spell Check a Word (Binary Search)")
-    print("3. Spell Check Alice In Wonderland (Linear Search)")
-    print("4. Spell Check Alice In Wonderland (Binary Search)")
-    print("5. Exit")
 
 #USER INPUT 
     select = input("Enter Selection (1-5): ")
