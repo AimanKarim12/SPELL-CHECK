@@ -21,9 +21,9 @@ def main():
         elif selection =="2":
             checkWordBinary(dictionary)
         elif selection =="3":
-            checkWordLinearAIW(aliceWords)
+            checkWordLinearAIW(aliceWords, dictionary)
         elif selection =="4":
-            checkWordBinaryAIW(aliceWords)
+            checkWordBinaryAIW(aliceWords, dictionary)
             
 
 # end main()
@@ -80,10 +80,9 @@ def checkWordLinearAIW(dictionary, aliceWords):
         result = linearSearch(dictionary, word)
         end = time.time()
         if(result == -1):
-            print(word, "Is Not Found")
+            count += 1
+            print(f"total words from Alice Words Not In Dictionary: {count}")
     else:
-        count += 1
-        print(f"total words from Alice Words Not In Dictionary: {count}")
         print("it took" , end - start, "Seconds")
 
 
