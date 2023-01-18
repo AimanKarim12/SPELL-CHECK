@@ -77,32 +77,30 @@ def checkWordLinearAIW(dictionary, aliceWords):
     print("Linear Search is Starting..")
     for word in aliceWords:
         start = time.time()
-        result = linearSearch(dictionary, word)
+        result = linearSearch(dictionary, word.lower())
         end = time.time()
         if(result == -1):
             count += 1
-            print(f"total words from Alice Words Not In Dictionary: {count}")
     else:
         print("it took" , end - start, "Seconds")
+
+    print(f"total words from Alice Words Not In Dictionary: {count}")
 
 
 #BINARY AIW
 def checkWordBinaryAIW(aliceWords):
-    print("BINARY SEARCH A WORD")
-    userinput = input("Enter A Word: ")
-    print("BINARY Search is Starting..")
-    start = time.time()
-    result = binarySearch(aliceWords, userinput.lower())
-    end = time.time()
-
-    if result != -1:
-        print(userinput, "Is Found At", str(result))
-
+    count = 0
+    print("Binary Search is Starting..")
+    for word in aliceWords:
+        start = time.time()
+        result = linearSearch(aliceWords, word.lower())
+        end = time.time()
+        if(result == -1):
+            count += 1
     else:
-        print(userinput, "Is Not Found")
-        
-    print("it took" , end - start, "Seconds")
+        print("it took" , end - start, "Seconds")
 
+    print(f"total words from Alice Words Not In Dictionary: {count}")
 
 def loadWordsFromFile(fileName):
     # Read file as a string
@@ -134,7 +132,7 @@ def binarySearch(array, item):
             top = mid - 1
         else:
             return mid
-        return -1
+    return -1
 
 
 # Call main() to begin program
